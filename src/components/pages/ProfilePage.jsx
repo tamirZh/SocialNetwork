@@ -4,14 +4,38 @@ export default function ProfilePage({ user }) {
   return (
     <>
       <h1>ProfilePage</h1>
-      <img src={user.image} alt={user.firstName} />
+      <img src={user.image} style={{ width: '16rem' }} alt={user.firstName} />
       <ul>
-        <li>{user.firstName}</li>
-        <li>{user.secondName}</li>
-        <li>{user.sex}</li>
-        <li>{user.email}</li>
-        <li>{user.dateOfBirth}</li>
-        <li>{user.description}</li>
+        <li>
+          Имя:
+          {' '}
+          {user.firstName}
+        </li>
+        <li>
+          Фамилия:
+          {' '}
+          {user.secondName}
+        </li>
+        <li>
+          Пол:
+          {' '}
+          {user.sex}
+        </li>
+        <li>
+          Почта:
+          {' '}
+          {user.email}
+        </li>
+        <li>
+          Дата рождения:
+          {' '}
+          {user.dateOfBirth}
+        </li>
+        <li>
+          О себе:
+          {' '}
+          {user.description}
+        </li>
       </ul>
     </>
   );

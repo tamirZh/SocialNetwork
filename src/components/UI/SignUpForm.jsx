@@ -17,7 +17,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{ width: '30rem', display: 'flex', flexDirection: 'column' }}>
       <div className="mb-3">
         <label htmlFor="exampleInputName1" className="form-label">Имя</label>
         <input name="firstName" type="text" className="form-control" id="exampleInputName1" aria-describedby="emailHelp" />
@@ -28,9 +28,9 @@ export default function SignUpForm() {
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputName3" className="form-label">Мужской</label>
-        <input name="sex" type="radio" value={'male'} className="form-control" id="exampleInputName3" aria-describedby="emailHelp" />
+        <input name="sex" type="radio" value="male" className="form-control" id="exampleInputName3" aria-describedby="emailHelp" />
         <label htmlFor="exampleInputName3" className="form-label">Женский</label>
-        <input name="sex" type="radio" value={'female'} className="form-control" id="exampleInputName31" aria-describedby="emailHelp" />
+        <input name="sex" type="radio" value="female" className="form-control" id="exampleInputName31" aria-describedby="emailHelp" />
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">Email</label>

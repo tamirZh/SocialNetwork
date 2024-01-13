@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Image extends Model {
     static associate(models) {
-      this.belongsTo(models.User, { foreignKey: 'userId' });
+      this.belongsTo(models.Album, { foreignKey: 'albumId' });
       this.hasMany(models.Like, { foreignKey: 'imageId' });
       this.hasMany(models.Comment, { foreignKey: 'imageId' });
     }
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   Image.init({
     name: DataTypes.STRING,
     img: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
+    albumId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Image',

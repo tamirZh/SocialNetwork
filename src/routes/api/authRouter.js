@@ -1,9 +1,9 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
-import { User } from '../../db/models';
-import generateTokens from '../utils/generateTokens';
-import cookiesConfig from '../config/cookiesConfig';
-import checkAuthRedirect from '../middlewares/checkAuthRedirect';
+import { User } from '../../../db/models';
+import generateTokens from '../../utils/generateTokens';
+import cookiesConfig from '../../config/cookiesConfig';
+import checkAuthRedirect from '../../middlewares/checkAuthRedirect';
 
 const authRouter = express.Router();
 
