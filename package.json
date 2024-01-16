@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "babel-node src/server.js",
     "start": "webpack -d eval-source-map && babel-node src/server.js",
     "webpack": "webpack -wd eval-source-map",
@@ -34,6 +33,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
