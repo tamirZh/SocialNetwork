@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function UserCard({ oneUser }) {
   return (
-    <div style={{ display: 'flex', }}>
-      <div className="card" style={{ width: '200px' }}>
-        <img src={oneUser.image} className="card-img-top" style={{ width: '200px' }} alt={oneUser.firstName} />
+    <div>
+      <div className="bg-blue-100 rounded-md p-8">
+        <img src={oneUser.image} className="" alt={oneUser.firstName} />
         <div className="card-body">
           <h5 className="card-title">
             {oneUser.firstName}

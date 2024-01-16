@@ -2,6 +2,7 @@ import express from 'express';
 import {
   Image, Album, User, Comment,
 } from '../../../db/models';
+import checkAuthor from '../../middlewares/checkAuthor';
 
 const router = express.Router();
 
@@ -33,6 +34,17 @@ router.post('/album/add', async (req, res) => {
     console.log(error);
     res.status(500).json(error);
   }
+
+  router.delete('/album/:albId', async (req, res) => {
+    try {
+      const { albId } = req.params;
+      console.log(req.body, '-------->>>>');
+      await Album.destroy({ where: { albId } });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json(error);
+    }
+  });
 });
 
 export default router;

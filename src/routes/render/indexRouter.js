@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   const allUsers = await User.findAll();
-  // const filtered = allUsers.filter((el) => el.id !== res.locals.user.id);
+  const filtered = allUsers.filter((el) => el.id !== res.locals.user?.id);
   const initState = { allUsers };
   res.render('IndexPage', initState);
 });
@@ -27,7 +27,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/albums', async (req, res) => {
-  const allAlbums = await Album.findAll({ where: { userId: res.locals.user.id } });
+  const allAlbums = await Album.findAll({ where: { userId: res.locals.user?.id } });
   const initState = { allAlbums };
   res.render('AlbumsPage', initState);
 });
