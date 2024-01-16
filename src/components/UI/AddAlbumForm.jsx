@@ -3,7 +3,7 @@ import React from 'react';
 export default function AddAlbumForm(handleSubmit) {
   return (
     <div className="container mx-auto px-4 border-solid border-2">
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="border-solid border-2">Name</label>
           <input name="name" type="text" className="border-solid  border-2" id="exampleInputEmail1" aria-describedby="emailHelp" />
