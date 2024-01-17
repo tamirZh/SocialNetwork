@@ -34,17 +34,37 @@ router.post('/album/add', async (req, res) => {
     console.log(error);
     res.status(500).json(error);
   }
+});
 
-  router.delete('/album/:albId', async (req, res) => {
-    try {
-      const { albId } = req.params;
-      console.log(req.body, '-------->>>>');
-      await Album.destroy({ where: { albId } });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json(error);
-    }
-  });
+router.delete('/album/:id', async (req, res) => {
+  console.log(req.params, '-------->>>>');
+  try {
+    const { id } = req.params;
+    await Album.destroy({ where: { id } });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
+router.post('/image/add', async (req, res) => {
+  try {
+    const newImage = await Image.create({ ...req.body, albumId: re });
+  } catch (error) {
+
+  }
+});
+
+router.delete('/image/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Image.destroy({ where: { id } });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
 });
 
 export default router;

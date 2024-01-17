@@ -17,7 +17,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ width: '30rem', display: 'flex', flexDirection: 'column' }}>
+    <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="exampleInputName1" className="form-label">Имя</label>
         <input name="firstName" type="text" className="form-control" id="exampleInputName1" aria-describedby="emailHelp" />
@@ -39,6 +39,10 @@ export default function SignUpForm() {
       <div className="mb-3">
         <label htmlFor="exampleInputPassword1" className="form-label">Пароль</label>
         <input name="password" type="password" className="form-control" id="exampleInputPassword1" />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputName5" className="form-label">Немного о себе</label>
+        <input name="description" type="text" className="form-control" id="exampleInputName5" aria-describedby="emailHelp" />
       </div>
       <div className="mb-3">
         <label htmlFor="exampleInputName4" className="form-label">Аватар</label>

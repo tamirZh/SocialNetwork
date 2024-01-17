@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AlbumCard({ oneAlbum, deleteHandler }) {
   return (
-    <div className="card" style={{ width: '300px' }}>
+    <div className="flex">
       <a href={`/${oneAlbum.id}`}>
         <img src={oneAlbum.img} className="card-img-top" alt={oneAlbum.name} />
       </a>

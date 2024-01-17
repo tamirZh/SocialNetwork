@@ -21,7 +21,6 @@ export default function AlbumsPage({ allAlbums }) {
 
   const deleteHandler = async (albumId) => {
     const response = await fetch(`/api/album/${albumId}`, { method: 'DELETE' });
-    console.log(response, '-----------<<<<<<>>>>>>');
     if (response.status === 200) {
       setCurrentAlbums((prev) => prev.filter((el) => el.id !== albumId));
     } else if (response.status === 500) {
@@ -29,20 +28,18 @@ export default function AlbumsPage({ allAlbums }) {
     }
   };
   return (
-    <>
+    <div className="container mx-auto px-4">
       <AddAlbumForm handleSubmit={handleSubmit} />
-      <div>
-        <h1>AlbumPage</h1>
-        <div className="grid grid-cols-3 gap-4">
-          { currentAlbums?.map((oneAlbum) => (
-            <AlbumCard
-              key={oneAlbum.id}
-              oneAlbum={oneAlbum}
-              deleteHandler={deleteHandler}
-            />
-          ))}
-        </div>
+      <h1>AlbumPage</h1>
+      <div className="grid grid-cols-3 gap-4  text-center">
+        { currentAlbums?.map((oneAlbum) => (
+          <AlbumCard
+            key={oneAlbum.id}
+            oneAlbum={oneAlbum}
+            deleteHandler={deleteHandler}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 }

@@ -17,8 +17,8 @@ export default function Layout({ children, initState }) {
         />
         <title>SocialNetwork</title>
       </head>
-      <body className="text-gray-700">
-        <div id="root">{children}</div>
+      <body>
+        <div id="root" className="container mx-40px px-4">{children}</div>
       </body>
     </html>
   );

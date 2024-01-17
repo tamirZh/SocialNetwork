@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function ProfilePage({ user }) {
   return (
-    <>
-      <h1>ProfilePage</h1>
-      <img src={user.image} style={{ width: '16rem' }} alt={user.firstName} />
+    <div className="container mx-auto py-4 w-80">
+      <h1 className="text-2xl">ProfilePage</h1>
+      <img src={user.image} alt={user.firstName} />
       <ul>
         <li>
           Имя:
@@ -37,6 +37,6 @@ export default function ProfilePage({ user }) {
           {user.description}
         </li>
       </ul>
-    </>
+    </div>
   );
 }

@@ -19,22 +19,21 @@ export default function ImagesPage({ myImages }) {
     }
   };
 
-  const deleteHandler = async (albumId) => {
-    const response = await fetch(`/api/album/${albumId}`, { method: 'DELETE' });
-    console.log(response, '-----------<<<<<<>>>>>>');
+  const deleteHandler = async (imageId) => {
+    const response = await fetch(`/api/image/${imageId}`, { method: 'DELETE' });
     if (response.status === 200) {
-        setCurMyImages((prev) => prev.filter((el) => el.id !== albumId));
+      setCurMyImages((prev) => prev.filter((el) => el.id !== imageId));
     } else if (response.status === 500) {
       const message = await response.json();
     }
   };
   return (
-    <>
-      <AddImageForm handleSubmit={handleSubmit} />
-      <div className="row">
-        <h1>ImagesPage</h1>
-        { curMyImages?.map((oneImage) => <ImageCard key={oneImage.id} oneImage={oneImage} />)}
+    <div className="container mx-auto px-4">
+      {/* <AddImageForm handleSubmit={handleSubmit} /> */}
+      <h1>ImagesPage</h1>
+      <div className="grid grid-cols-4 gap-4 text-center">
+        { curMyImages?.map((oneImage) => <ImageCard key={oneImage.id} oneImage={oneImage} deleteHandler={deleteHandler} />)}
       </div>
-    </>
+    </div>
   );
 }

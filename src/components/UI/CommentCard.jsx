@@ -13,7 +13,6 @@ export default function CommentCard({ comment }) {
                 <img src={comment.User.img} alt="avatar" width="25" height="25" />
                 <p className="small mb-0 ms-2">{comment.User.name}</p>
               </div>
-              <div className="d-flex flex-row align-items-center"></div>
             </div>
           </div>
         </div>
