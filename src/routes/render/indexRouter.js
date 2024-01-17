@@ -37,6 +37,7 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
     const myImages = await Image.findAll({
       where: { albumId: id },
+      include: { model: Album },
     });
     const initState = { myImages };
     res.render('ImagesPage', initState);

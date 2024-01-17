@@ -3,6 +3,7 @@ import ImageCard from '../UI/ImageCard';
 import AddImageForm from '../UI/AddImageForm';
 
 export default function ImagesPage({ myImages }) {
+    console.log(myImages, '-------------->>>>>>>>>>>>>');
   const [curMyImages, setCurMyImages] = useState(myImages);
 
   const handleSubmit = async (e) => {
