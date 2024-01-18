@@ -4,9 +4,9 @@ import { User, Album, Image } from '../../../db/models';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const allUsers = await User.findAll();
-  const filtered = allUsers.filter((el) => el.id !== res.locals.user?.id);
-  const initState = { filtered };
+  const all = await User.findAll();
+  const allUsers = all.filter((el) => el.id !== res.locals.user?.id);
+  const initState = { allUsers };
   res.render('IndexPage', initState);
 });
 
